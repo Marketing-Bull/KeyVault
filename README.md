@@ -144,4 +144,4 @@ KeyVault/
 
 ## License
 
-Private repository. All rights reserved.
+Released under the [MIT License](LICENSE). Copyright (c) 2026 Marketing Bull, LLC. All rights reserved.
