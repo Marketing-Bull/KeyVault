@@ -1,6 +1,6 @@
 name: KeyVault
 options:
-  bundleIdPrefix: com.keyvault
+  bundleIdPrefix: com.keyvault305
   deploymentTarget:
     macOS: "14.0"
   xcodeVersion: "15.0"
@@ -19,16 +19,19 @@ targets:
       - KeyVault
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.keyvault.app
+        PRODUCT_BUNDLE_IDENTIFIER: com.keyvault305.app
+        DEVELOPMENT_TEAM: T47L6TGCS8
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ENABLE_HARDENED_RUNTIME: YES
         INFOPLIST_FILE: KeyVault/Info.plist
         CODE_SIGN_ENTITLEMENTS: KeyVault/KeyVault.entitlements
         PRODUCT_NAME: KeyVault
         MARKETING_VERSION: "1.0.0"
-        CURRENT_PROJECT_VERSION: 1
+        CURRENT_PROJECT_VERSION: 2
     entitlements:
       path: KeyVault/KeyVault.entitlements
       properties:
-        com.apple.security.app-sandbox: false
+        com.apple.security.app-sandbox: true
         keychain-access-groups:
           - $(AppIdentifierPrefix)com.keyvault.app
 
