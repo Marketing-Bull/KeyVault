@@ -34,6 +34,8 @@
 		E88E9BD3D0B0746FB4235D9B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7820368C7CFE47475B54EFC3 /* MainView.swift */; };
 		EA5AD0335855C377CC4DA7ED /* EntryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FECC5EB28BA1B93AB2EC2C /* EntryListView.swift */; };
 		F61E7C4D2F9F37C01DE676D2 /* AgentAccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31783645BCFAF7C75AB97884 /* AgentAccessView.swift */; };
+		583208A2CB57C97EBD9F8057 /* VaultStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B826E09DA880F5FEF29770BE /* VaultStore.swift */; };
+		3AE68A8D66D5CE7EE4A3AF82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 042994FC723C48D0FF8FCB45 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +80,8 @@
 		CFF740D9B6378CBFE1092350 /* KeyVaultTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeyVaultTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBEC447E0D8E5F9F787EE4D5 /* ClipboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardManager.swift; sourceTree = "<group>"; };
 		F4DEF67883EBC4B0F9C4D9AE /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
+		B826E09DA880F5FEF29770BE /* VaultStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaultStore.swift; sourceTree = "<group>"; };
+		042994FC723C48D0FF8FCB45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -118,6 +122,7 @@
 		2DFC6A1FB3844407E982A106 /* KeyVault */ = {
 			isa = PBXGroup;
 			children = (
+				042994FC723C48D0FF8FCB45 /* Assets.xcassets */,
 				2C1E180B70444F2420898192 /* Info.plist */,
 				9A090362453A3CE39EC759D0 /* KeyVault.entitlements */,
 				50124F86B56A2CF36FAACD9A /* App */,
@@ -145,6 +150,7 @@
 			children = (
 				96884DB856B798CF3E2D3D9E /* AppState.swift */,
 				0E71610ED4F216BDAB09FBE9 /* KeyVaultApp.swift */,
+				B826E09DA880F5FEF29770BE /* VaultStore.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -238,6 +244,7 @@
 			buildConfigurationList = CAA7F6D29B147CA9A97B955E /* Build configuration list for PBXNativeTarget "KeyVault" */;
 			buildPhases = (
 				D5B3AFBF463910636221A5AA /* Sources */,
+				4D815DA61606310814F53DBD /* Resources */,
 			);
 			buildRules = (
 			);
@@ -297,6 +304,17 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		4D815DA61606310814F53DBD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AE68A8D66D5CE7EE4A3AF82 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		19DBFF99C3C48C540B0A3000 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -327,6 +345,7 @@
 				039C116F86E67FDB3DE79CB8 /* FieldRow.swift in Sources */,
 				A8E59632BC959B39EF53AF0D /* KeyDerivation.swift in Sources */,
 				5AF604DC18F0B5A1144A085B /* KeyVaultApp.swift in Sources */,
+				583208A2CB57C97EBD9F8057 /* VaultStore.swift in Sources */,
 				DA4A03124EFCC614AF92636C /* KeychainManager.swift in Sources */,
 				E88E9BD3D0B0746FB4235D9B /* MainView.swift in Sources */,
 				31974058EF47B4EF7B75F9B0 /* SecureField.swift in Sources */,

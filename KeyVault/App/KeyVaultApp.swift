@@ -12,12 +12,17 @@ struct KeyVaultApp: App {
             Agent.self,
             AgentGrant.self
         ])
-        let modelConfiguration = ModelConfiguration(
-            schema: schema,
-            isStoredInMemoryOnly: false
-        )
+        let store = VaultStore.prepare()
         do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
+            return try ModelContainer(for: schema, configurations: [ModelConfiguration(schema: schema, url: store.url)])
+        } catch where store.copiedLegacyStore {
+            // The copied legacy file wasn't a KeyVault store after all; drop the copy and start fresh.
+            VaultStore.removeStore(at: store.url)
+            do {
+                return try ModelContainer(for: schema, configurations: [ModelConfiguration(schema: schema, url: store.url)])
+            } catch {
+                fatalError("Could not create ModelContainer: \(error)")
+            }
         } catch {
             fatalError("Could not create ModelContainer: \(error)")
         }
