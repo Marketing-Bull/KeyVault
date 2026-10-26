@@ -54,6 +54,9 @@ struct EntryDetailView: View {
             Text("This will permanently delete \"\(entry.name)\" and all its fields.")
         }
         .onDisappear { decryptedValues.removeAll() }
+        // Non-sensitive fields are shown in the clear, so decrypt them up front. Re-runs when
+        // another entry is selected or this one is edited.
+        .task(id: "\(entry.id)-\(entry.updatedAt.timeIntervalSinceReferenceDate)") { loadNonSensitiveValues() }
     }
 
     // MARK: - Header
@@ -222,6 +225,17 @@ struct EntryDetailView: View {
     }
 
     // MARK: - Actions
+
+    private func loadNonSensitiveValues() {
+        guard let service = vaultService else { return }
+        // Non-sensitive fields, plus any sensitive ones the user has revealed, so an edit
+        // never leaves a stale value on screen.
+        var values: [UUID: String] = [:]
+        for field in entry.fields where !field.isSensitive || visibleFields.contains(field.id) {
+            values[field.id] = try? service.decryptFieldValue(field)
+        }
+        decryptedValues = values
+    }
 
     private func toggleFieldVisibility(_ field: VaultSecureField) {
         if visibleFields.contains(field.id) {
